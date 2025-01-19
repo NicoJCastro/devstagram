@@ -25,7 +25,7 @@
                     Login
                 </a>
                 <a 
-                    href="/crear-cuenta" 
+                    href="{{route('register')}}" 
                     class="font-bold uppercase text-gray-600 text-sm hover:text-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 border-b-2 border-transparent hover:border-sky-500">
                     Crear Cuenta
                 </a>
