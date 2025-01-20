@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -12,7 +13,15 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+   
+
     public function store(Request $request){
+
+         //Modificar request para validar si se repite un username
+
+        $request->request->add(['username' => Str::slug($request->username)]);
+    
+
         // Validación
         $request->validate([
             'name' => 'required|max:30',
@@ -30,5 +39,11 @@ class RegisterController extends Controller
             // 'password' => Hash::make( $request->password)
             
         ]);
+
+        //Autenticar un usuario
+        auth()->attempt(['email' => $request->email, 'password' => $request->password]);
+
+        //Redureccionar
+        return redirect()->route('posts.index');
     }
 }
