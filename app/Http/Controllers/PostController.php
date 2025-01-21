@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth'); En Laravel 11 los middleware van en las rutas (web.php)
     }
 
     public function index(){        
