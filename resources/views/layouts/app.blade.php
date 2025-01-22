@@ -31,7 +31,7 @@
                 </a>
 
                 <a 
-                    href="#" 
+                    href="{{route('posts.index', auth()->user()->username)}}" 
                     class="font-bold text-gray-600 text-sm hover:text-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 border-b-2 border-transparent hover:border-sky-500">
                     Hola: <span class="font-normal">{{auth()->user()->username}}</span>
                 </a>
@@ -50,7 +50,7 @@
             @guest
             <nav class="flex space-x-4 items-center bg-gray-50 p-3 rounded-lg shadow">
                 <a 
-                    href="#" 
+                    href="{{route('login')}}" 
                     class="font-bold uppercase text-gray-600 text-sm hover:text-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500 border-b-2 border-transparent hover:border-sky-500">
                     Login
                 </a>

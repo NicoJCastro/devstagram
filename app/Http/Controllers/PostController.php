@@ -20,9 +20,7 @@ class PostController extends Controller
        ]);
     }
 
-    public function create(){
-
-        dd("Creando post");
-        // return view('posts.create');
+    public function create(){        
+         return view('posts.create');
     }
 }
